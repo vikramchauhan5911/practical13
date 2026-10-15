@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #e2e8f0;
+  background: #080d1b;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 10% 0%, #172554 0%, transparent 38%),
+    radial-gradient(ellipse at 100% 35%, #312e81 0%, transparent 30%),
+    #080d1b;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 42px 0 60px;
+}
+
+/* Premium gradient header */
+
+.main-header {
+  position: relative;
+  overflow: hidden;
+  padding: 48px 25px;
+  text-align: center;
+  border: 1px solid #6475ff55;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #172554, #312e81 55%, #6d28d9);
+  box-shadow: 0 20px 60px #4338ca30;
+  margin-bottom: 32px;
+}
+
+.main-header::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -80px;
+  top: -120px;
+  border-radius: 50%;
+  background: #ffffff15;
+}
+
+.main-header h1 {
+  position: relative;
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.main-header p {
+  position: relative;
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Router demonstration cards */
+
+.router-card {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 30px;
+  border: 1px solid #ffffff16;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #151d32, #101728);
+  box-shadow: 0 15px 35px #00000030;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  animation: fadeUp 0.55s ease both;
+}
+
+.router-card:nth-of-type(2) {
+  animation-delay: 0.08s;
+}
+
+.router-card:nth-of-type(3) {
+  animation-delay: 0.16s;
+}
+
+.router-card:nth-of-type(4) {
+  animation-delay: 0.24s;
+}
+
+.router-card:hover {
+  transform: translateY(-4px);
+  border-color: #818cf855;
+  box-shadow: 0 20px 45px #00000045;
+}
+
+.router-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  color: #a5b4fc;
+  font-size: 25px;
+  font-weight: 750;
+}
+
+.router-card > p {
+  color: #a8b4cc;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Navigation buttons */
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.links a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  border: 1px solid #818cf866;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 5px 15px #4f46e525;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.links a:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 8px 22px #6366f155;
+}
+
+.links a:focus-visible {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 4px;
+}
+
+/* Page preview */
+
+.demo-page {
+  padding: 23px;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1e293b, #172033);
+}
+
+.demo-page h3 {
+  margin: 0 0 10px;
+  color: #f8fafc;
+  font-size: 21px;
+}
+
+.demo-page p {
+  margin: 0;
+  color: #b8c5dc;
+  line-height: 1.8;
+}
+
+/* Example information */
+
+.example {
+  margin-top: 22px;
+  padding: 15px 18px;
+  border: 1px solid #6366f144;
+  border-left: 4px solid #818cf8;
+  border-radius: 10px;
+  background: #6366f114;
+  color: #c7d2fe !important;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* Smooth entrance animation */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+  .app {
+    width: 94%;
+    padding: 22px 0 35px;
+  }
+
+  .main-header {
+    padding: 34px 18px;
+    border-radius: 18px;
+  }
+
+  .router-card {
+    padding: 22px 17px;
+    border-radius: 16px;
+  }
+
+  .router-card h2 {
+    font-size: 21px;
+  }
+
+  .links {
+    gap: 9px;
+  }
+
+  .links a {
+    flex: 1 1 auto;
+    padding: 12px 14px;
+  }
+
+  .demo-page {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
